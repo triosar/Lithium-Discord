@@ -1,3 +1,6 @@
+# Welcome to the Lithium Discord bot
+# Feel free to commit any changes you want!
+
 import discord # Import Discord.py
 import keep_alive # Used to host the webpage that gets pinged by uptimebot
 from dotenv import load_dotenv # Loads the API keys so people can't read from source.
