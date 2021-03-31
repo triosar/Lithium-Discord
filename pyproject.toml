@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "jenny-craig-beta"
+name = "get-out-of-this-file"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["reis_is_fat@notanemail.com"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
