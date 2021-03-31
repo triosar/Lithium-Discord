@@ -8,7 +8,9 @@ If you're really good then you might become a bot developer.
 Feel free to contact me for any queries!
 
 This work is licensed by the following license:
-Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) 
+
+Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
+
 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 In short you're not allowed to modify or use it outside this GitHub repository.
