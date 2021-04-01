@@ -138,7 +138,7 @@ async def on_message(message):
   	)
   	])
 async def bark(ctx, sentence: str):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.send(content=f"Bark! {sentence}!")
 
 
@@ -150,7 +150,7 @@ async def bark(ctx, sentence: str):
 	guild_ids=guild_ids
   )
 async def TCs(ctx):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.send(content="https://cdn.discordapp.com/attachments/465935479301341184/822045549061734441/ball.mp4")
 
 
@@ -162,7 +162,7 @@ async def TCs(ctx):
 	guild_ids=guild_ids
   )
 async def boss(ctx):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.send(content="https://cdn.discordapp.com/attachments/749804106637639720/779768843861229618/image0.gif\nhttps://cdn.discordapp.com/attachments/749804106637639720/779768848827940914/image0.png\nhttps://cdn.discordapp.com/attachments/749804106637639720/779768856062591016/image0.png\nhttps://cdn.discordapp.com/attachments/749804106637639720/779768861230628924/image0.jpg")
 
 
@@ -174,7 +174,7 @@ async def boss(ctx):
 	guild_ids=guild_ids
 	)
 async def credits(ctx):
-	await ctx.respond()
+	await ctx.defer()
 	embedMessage = discord.Embed(title="**Bot Credits:**", description="",color=discord.Color(0x6C038C), inline=False)
 	embedMessage.add_field(name="Developers:", value="P3tray", inline=False)
 	embedMessage.add_field(name="Helpers:", value="Triosar", inline=False)
@@ -190,7 +190,7 @@ async def credits(ctx):
 	guild_ids=guild_ids
 	)
 async def admins(ctx):
-  await ctx.respond()
+  await ctx.defer()
   embedMessage = discord.Embed(title="**Bot Admins:**", description="",color=discord.Color(0x6C038C), inline=False)
   AdminsString = ""
   ModeratorsString = ""
@@ -220,7 +220,7 @@ async def admins(ctx):
 	guild_ids=guild_ids
 	)
 async def ping(ctx):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.send(f"Pong! ({client.latency*1000}ms)")
 
 
@@ -265,7 +265,7 @@ async def ping(ctx):
   )
   ])
 async def suggest(ctx, server: str):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.send("What is your suggestion?")
 	suggestion = str((await client.wait_for('message', check=lambda message: message.author == ctx.author)).content)
 	suggestionEmbed = discord.Embed(title="**<a:blue_siren:819505847490183178> Incoming Suggestion <a:blue_siren:819505847490183178>**", description="",color=SUGGESTION_COLORS[server]) 
@@ -319,7 +319,7 @@ async def suggest(ctx, server: str):
   )
   ])
 async def training_shout(ctx, server: str):
-  await ctx.respond()
+  await ctx.defer()
   await ctx.send("What facility will the training be at?")
   training_facility = str((await client.wait_for('message', check=lambda message: message.author == ctx.author)).content)
   await ctx.send("What time will the training be?")
@@ -352,7 +352,7 @@ async def training_shout(ctx, server: str):
     )
   ])
 async def role(ctx, role: str):
-	await ctx.respond()
+	await ctx.defer()
 	if await check_bot_admin(ctx, 3):
 		await ctx.author.add_roles(discord.utils.get(ctx.author.guild.roles, name=role))
 @slash.slash(
@@ -368,7 +368,7 @@ async def role(ctx, role: str):
     )
   ])
 async def unrole(ctx, role: str):
-	await ctx.respond()
+	await ctx.defer()
 	if await check_bot_admin(ctx, 3):
 		await ctx.author.remove_roles(discord.utils.get(ctx.author.guild.roles, name=role))
 
@@ -402,7 +402,7 @@ async def unrole(ctx, role: str):
 
 @discord.ext.commands.has_permissions(manage_messages=True)
 async def purge(ctx, amount: int):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.channel.purge(limit=(amount+1))
 
 
@@ -433,7 +433,7 @@ async def purge(ctx, amount: int):
     )
   ])
 async def x_addcard(ctx, title: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 1):
     trello.cards.new(title, "6041f0a9a75c135249f8f9aa", "Created with Lithium Discord", 0)
 
@@ -453,7 +453,7 @@ async def x_addcard(ctx, title: str):
     )
   ])
 async def x_role(ctx, role: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 1):
     await ctx.send("GUILD_ID")
     guild_id = int((await client.wait_for('message', check=lambda message:  message.author == ctx.author)).content)
@@ -472,7 +472,7 @@ async def x_role(ctx, role: str):
     )
   ])
 async def x_create_role(ctx, role: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 1):
     await ctx.send("GUILD_ID")
     guild_id = int((await client.wait_for('message', check=lambda message:  message.author == ctx.author)).content)
@@ -495,7 +495,7 @@ async def x_create_role(ctx, role: str):
     )
   ])
 async def x_delete_role(ctx, role: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 1):
     await ctx.send("GUILD_ID")
     guild_id = int((await client.wait_for('message', check=lambda message:  message.author == ctx.author)).content)
@@ -518,7 +518,7 @@ async def x_delete_role(ctx, role: str):
     )
   ])
 async def x_edit_role(ctx, role: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 1):
     await ctx.send("GUILD_ID")
     guild_id = int((await client.wait_for('message', check=lambda message:  message.author == ctx.author)).content)
@@ -537,7 +537,7 @@ async def x_edit_role(ctx, role: str):
     )
   ])
 async def exec(ctx, string: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 0):
     print(string)
     eval(string)
@@ -555,7 +555,7 @@ async def exec(ctx, string: str):
     )
   ])
 async def x_send(ctx, message: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 2):
     await ctx.send("GUILD_ID")
     guild_id = int((await client.wait_for('message', check=lambda message:  message.author == ctx.author)).content)
@@ -576,7 +576,7 @@ async def x_send(ctx, message: str):
     )
   ])
 async def x_seach(ctx, search: str):
-  await ctx.respond()
+  await ctx.defer()
   for channel in client.get_all_channels():
     if (str(channel.name)).find(search) != -1 and not (channel.type is discord.ChannelType.category):     
       await ctx.send((str(channel.name) + " :: " + str(channel.id)))
@@ -597,7 +597,7 @@ async def x_seach(ctx, search: str):
     )
   ])
 async def x_open(ctx, search: str):
-  await ctx.respond()
+  await ctx.defer()
   if await check_bot_admin(ctx, 3):
     bestMatchChannel = client.get_channel(820625981060284416)
     bestMatchValue   = 1000
@@ -655,7 +655,7 @@ async def x_open(ctx, search: str):
     )
   ])
 async def invite(ctx, option: str):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.send(DISCORD_INVITES[option])
 
 
@@ -695,7 +695,7 @@ async def on_raw_reaction_remove(reaction):
         		)
         	])
 async def test(ctx, option: str):
-	await ctx.respond()
+	await ctx.defer()
 	await ctx.send(content=f"Much wow! You chose {option}? Many bamboozle")
 
 
