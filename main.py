@@ -334,7 +334,6 @@ async def training_shout(ctx, server: str):
   trainingEmbed.add_field(name="Host:", value=("<@"+str(ctx.author.id)+">"), inline=False)
   message = await (client.get_channel(TRAINING_CHANNELS[server])).send(embed=trainingEmbed)
   await message.add_reaction('👍')
-  await message.add_reaction('👎')
 
 
 
